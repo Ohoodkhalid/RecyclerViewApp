@@ -15,10 +15,9 @@ class MainActivity : AppCompatActivity() {
         val recView = findViewById<RecyclerView>(R.id.recyclerview)
         addButton.setOnClickListener{
             myListItem.add(editText.text.toString())
+            recView.adapter=RecyclerViewAdapter(myListItem)
+            recView.layoutManager = LinearLayoutManager(this)
         }
-        recView.adapter=RecyclerViewAdapter(myListItem)
-        recView.layoutManager = LinearLayoutManager(this)
-
 
     }
 }
